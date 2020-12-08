@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>grid</title>
+</head>
+<body>
+	<div class="container">
+		<nav>navbar</nav>
+		<main>main</main>
+		<div id="side">sidebar</div>
+		<div id="sub1">content1</div>
+		<div id="sub2">content2</div>
+		<div id="sub3">content3</div>
+		<footer>footer</footer>
+
+</div>
+</body>
+</html>
+
+<style type="text/css">
+	:root{
+		--main-radius:10px;
+		--main-padding:10px;
+	}
+
+	body{
+		padding: 0px;
+		margin: 5px;
+		
+	}
+	.container{
+		display: grid;
+		height: 100vh;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 0.3fr 1.5fr 1.2fr 0.8fr; 
+		grid-template-areas: 
+		"nav nav nav nav"
+		" main main main side"
+		" sub1 sub2 sub3 side"
+		" footer footer footer side";
+		grid-gap: 0.2em; 
+		text-align: center;
+
+
+
+	}
+	nav{
+		background: green;
+		grid-area:nav;
+		border-radius: var(--main-radius);
+		padding: var(--main-padding);
+	}
+	main{
+		background: red;
+		grid-area: main; 
+		border-radius: var(--main-radius);
+		padding: var(--main-padding);
+	}
+	#side{
+		background: orange;
+		grid-area: side;
+		border-radius: var(--main-radius);
+		padding: var(--main-padding);
+	}
+	#sub1{
+		background: blue;
+		grid-area: sub1;
+		border-radius: var(--main-radius);
+		padding: var(--main-padding);
+	}
+	#sub2{
+		background: yellow;
+		grid-area: sub2;
+		border-radius: var(--main-radius);
+		padding: var(--main-padding);
+	}
+	#sub3{
+		background: grey;
+		grid-area: sub3;
+		border-radius: var(--main-radius);
+		padding: var(--main-padding);
+
+	}
+	footer{
+		background: violet;
+		grid-area: footer;
+		border-radius: var(--main-radius);
+		padding: var(--main-padding);
+	}
+	@media only screen and (max-width: 550px){
+		.container{
+			grid-template-columns: 1fr;
+			grid-template-rows: 0.4fr 0.5fr 2.2fr 1.2fr 1.2fr 1fr ;
+			grid-template-areas: 
+			"nav"
+			"side"
+			"main"
+			"sub1"
+			"sub2"
+			"sub3"
+			"footer";
+		}
+	}
+	
+</style>
